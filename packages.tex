@@ -1,0 +1,82 @@
+
+\usepackage{ucs,babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{textcomp, varioref, csquotes}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{simplewick}
+
+\usepackage{siunitx}
+\usepackage{feynmp}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{arydshln}
+%\usepackage{xfrac}
+\usepackage{nicefrac}
+\DeclareGraphicsRule{*}{mps}{*}{}
+%%%% Norwegian ligature definition %%%%
+% \catcode`æ=\active\catcode`ø=\active\catcode`å=\active
+% \catcode`Æ=\active\catcode`Ø=\active\catcode`Å=\active
+% \defæ{\ae}\defø{\o}\defå{\aa}
+% \defÆ{\AE}\defØ{\O}\defÅ{\AA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{language=Python,
+  numbers=none,
+  breaklines=true,
+  tabsize=2,
+  basicstyle=\footnotesize,
+  commentstyle={\sffamily\color{green}},
+  keywordstyle = {\sffamily\color{blue}\textbf},
+  identifierstyle = {\sffamily\color{black}},
+  stringstyle = {\sffamily\color{green}},
+  numberstyle={\sffamily\color{gray}},
+  showstringspaces=false,
+  captionpos=b
+}
+
+\usepackage{amsmath, amssymb, parskip}
+
+\usepackage{wrapfig}
+\usepackage{footnote}
+
+%TODO fullpage or not fullpage?
+\usepackage{fullpage}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=black,filecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{units}
+\usepackage{url}
+\urlstyle{same}
+%\usepackage{biblatex}
+\usepackage{fancyvrb}
+% Removed exercise package in order to use self-made commands instead.
+%\usepackage{exercise}
+%\usepackage[noanswer]{exercise}
+\usepackage{wrapfig}
+% Calligra for Griffithy script r - could be replaced by using includegraphics
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\usepackage{multicol}
+\usepackage{epigraph}
+
+%Enables other enumerate options such as capital roman numbering etc.
+\usepackage{enumerate}
+
+%TODO notes enabled or disabled
+\ifx \disabletodo \undefined
+    \usepackage{todonotes}
+\else
+    \usepackage[disable]{todonotes}
+\fi
+
+% Header and footer package
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headheight}{12pt}
+
+\usepackage[hang,small]{caption}
+%\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{framed}

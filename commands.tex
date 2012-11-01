@@ -1,0 +1,260 @@
+% electromagnetic constants
+\newcommand{\numeps}{8.85 \times 10^{-12} \, \unit{C^2N^-1m^{-2}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+%\renewcommand{\(}{\left(}
+%\renewcommand{\)}{\right)}
+%\renewcommand{\d}{\cdot}
+\newcommand{\Lr}{\Leftrightarrow}
+\newcommand{\eq}{\begin{eqnarray}}
+\newcommand{\eqs}{\begin{eqnarray*}}
+\newcommand{\eqe}{\end{eqnarray}}
+\newcommand{\eqes}{\end{eqnarray*}}
+
+%faster typing partials
+
+\newcommand{\ddx}{\frac{\partial}{\partial x}}
+\newcommand{\ddy}{\frac{\partial}{\partial y}}
+\newcommand{\ddz}{\frac{\partial}{\partial z}}
+
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppdiff}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\diff}[2]{\frac{d #1}{d #2}}
+
+\newcommand{\A}{\vec{A}}
+\newcommand{\B}{\vec{B}}
+\newcommand{\C}{\vec{C}}
+\newcommand{\F}{\vec{F}}
+\newcommand{\E}{\vec{E}}
+
+%\renewcommand{\a}{\vec a}
+%\renewcommand{\b}{\vec b}
+%\renewcommand{\c}{\vec c}
+%\renewcommand{\v}{\vec v}
+\newcommand{\bmu}{\mbox{\boldmath{$\mathbf{\mu}$}}}
+
+%\renewcommand{\i}{\mathbf{\hat i}}
+%\renewcommand{\j}{\mathbf{\hat j}}
+%\renewcommand{\k}{\mathbf{\hat k}}
+%\renewcommand{\l}{\vec l}
+%\renewcommand{\r}{\mathbf{\hat r}}
+
+
+\newcommand{\emf}{\mathcal{E}}
+
+%command for bold nabla
+\newcommand{\bnabla}{\mbox{\boldmath$\nabla$}} 
+\newcommand{\del}{\bnabla}
+\newcommand{\btheta}{\mbox{\boldmath{$\mathbf{\hat{\theta}}$}}}
+
+\newcommand{\bphi}{\mbox{\boldmath{$\mathbf{\hat{\phi}}$}}}
+\newcommand{\utheta}{\mbox{\boldmath{$\mathbf{\hat{\theta}}$}}}
+\newcommand{\uphi}{\mbox{\boldmath{$\mathbf{\hat{\phi}}$}}}
+
+\newcommand{\btau}{\mbox{\boldmath{$\mathbf{\tau}$}}}
+
+\newcommand{\x}{\mathbf{\hat x}}
+\newcommand{\y}{\mathbf{\hat y}}
+\newcommand{\z}{\mathbf{\hat z}}
+\newcommand{\n}{\mathbf{\hat n}}
+
+\newcommand{\p}{\vec p}
+
+\newcommand{\ra}{\mathbf{\hat r}}
+
+
+%\newcommand{\Ohm}{\Omega}
+%\newcommand{\ohm}{\Omega}
+% Make units have space in front of them
+\let\oldunit\unit
+\renewcommand{\unit}[1]{\,\oldunit{#1}}
+
+\newcommand{\Cal}[1]{\ensuremath{\mathcalligra{#1}}}
+%\newcommand{\gr}{\Cal{r}} % Griffiths style r, but is italic. See fix below (\griffiths).
+\newcommand{\gr}{r}
+\newcommand{\griffiths}{\includegraphics[height=5pt]{../images/scriptr.pdf}}
+
+%del operator, divergence and curl
+\newcommand{\delo}{\frac{\partial}{\partial x}\i+\frac{\partial}{\partial y}\j + \frac{\partial}{\partial z}\k}
+
+\renewcommand{\div}[3]{\frac{\partial}{\partial x} #1 +\frac{\partial }{\partial y} #2 + \frac{\partial }{\partial z} #3}
+
+\newcommand{\adiv}[3]{\frac{\partial #1}{\partial x}  +\frac{\partial #2}{\partial y}  + \frac{\partial #3 }{\partial z} }
+
+
+\newcommand{\curl}[3]{\( \frac{\partial }{\partial y} #3 - \frac{\partial }{\partial z} #2 \)\i + \( \frac{\partial}{\partial z} #1 - \frac{\partial}{\partial x} #3\) \j + \( \frac{\partial }{\partial x} #2 - \frac{\partial}{\partial y} #1\)\k}
+
+\newcommand{\acurl}[3]{\( \frac{\partial #3 }{\partial y} - \frac{\partial #2}{\partial z}  \)\i + \( \frac{\partial  #1}{\partial z} - \frac{\partial #3}{\partial x} \) \j + \( \frac{\partial  #2}{\partial x} - \frac{\partial #1}{\partial y} \)\k}
+
+
+\newcommand{\mcurl}[3]{\left|\begin{matrix} \i & \j & \k \\
+  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\ #1 & #2 & #3 \end{matrix}\right|}
+
+\newcommand{\grad}[1]{\frac{\partial}{\partial x} #1\i +\frac{\partial }{\partial y} #1 \j + \frac{\partial }{\partial z} #1\i}
+
+\newcommand{\agrad}[1]{\frac{\partial #1}{\partial x} \i +\frac{\partial #1 }{\partial y} \j + \frac{\partial #1}{\partial z} \k}
+
+
+%%%% Custom Command for floating Infoboxes
+%%%% usage: \infobox{<title>}{<text>}
+\definecolor{infobox}{rgb}{0.9,0.95,1.0}      
+\newcommand{\infobox}[1]{
+\begin{wrapfigure}{r}{0.3\textwidth}
+    %\colorbox{infobox}{
+    %\framebox{
+        \hspace{10pt}
+        \parbox{0.3\textwidth}{
+    
+            \begin{wrapfigure}{r}{0.05\textwidth}
+                \vspace{-23pt}
+                \includegraphics[width=0.05\textwidth]{../images/info.png}
+                \vspace{-23pt}
+            \end{wrapfigure}
+
+            \small{\par #1\par} 
+    %}
+        }
+\end{wrapfigure}
+}
+
+%%%% Custom command to print out constants (so we don't have to change the formatting in 400 files)
+%%%% usage: \constant{<title>}{<definition}
+\newcommand{\constant}[2]{#1: & #2 \\[3pt]}
+
+%%%% Custom command to list constants
+\newenvironment{constants}
+{
+    \section*{Useful constants} \label{sec:usefulconstants}
+    
+    These constants might be useful in some of this week's exercises.
+
+    \begin{center}
+    \begin{tabular}{lr}
+    \hline
+    \noalign{\smallskip}
+}
+{
+    \hline
+    \end{tabular}
+    \end{center}
+}
+
+%%%% Custom command to print out exercises
+\newcounter{week}
+\newcounter{exercise}
+\newcommand{\exercise}[1]{
+    \setcounter{qcounter}{0}
+    \refstepcounter{exercise} \section*{Exercise \arabic{week}.\arabic{exercise}: #1}
+}
+
+
+
+%%%% Custom command to print out questions
+\newcounter{qcounter}
+\newenvironment{questions}              % environment name
+{
+    \begin{enumerate}[a)]
+    \setcounter{enumi}{\value{qcounter}}
+}                 % begin code
+{
+    \setcounter{qcounter}{\value{enumi}}
+    \end{enumerate}
+}                       % end code
+\newcommand{\question}{\item}
+\newcommand{\questiono}{\item \textbf{Obligatory:} }
+
+
+\usepackage{comment}
+
+%%%% Answers
+%%%% Check if \disableanswers is defined or not. If not, print answers.
+\definecolor{solutioncolor}{rgb}{0.0,0.0,0.5}
+\ifx \disablesolution \undefined
+    \newenvironment{sol}
+    {
+        \par \vspace{10pt} 
+        %\colorlet{shadecolor}{yellow!10}
+        %\begin{shaded}
+        \color{solutioncolor}
+        \emph{Solution:}
+    }
+    {
+        %\begin{center}
+        %\line(1,0){420}
+        %\end{center} 
+        %\end{shaded}
+        \vspace{10pt} \par
+    }
+\else
+    \excludecomment{sol}
+%     \newenvironment{sol}{\comment}{\endcomment}
+%     \newenvironment{sol}{}{}
+%     \newenvironment{sol}{\ifx \disablesolution \undefined}{\fi}
+	%\newenvironment{sol}{}{}
+\fi
+\newcommand{\solution}[1]{\begin{sol} #1 \end{sol}}
+
+\definecolor{answercolor}{rgb}{0.0,0.5,0.0}
+\ifx \disableanswers \undefined
+    \newenvironment{ans}
+    {
+        \par  \vspace{10pt}
+        %\colorlet{shadecolor}{yellow!10}
+        %\begin{shaded}
+        \color{answercolor}
+        \emph{Answer:}
+    }
+    {
+        %\end{shaded}
+        \vspace{15pt} \par
+    }
+    %\newcommand{\answer}[1]{}   % Answers visible
+\else
+    \excludecomment{ans}
+    %\newcommand{ans}[1]{} % Answers hiddden
+    %\newenvironment{ans}{}{}
+\fi
+\newcommand{\answer}[1]{\begin{ans} #1 \end{ans}}
+
+\newcommand{\defaultheader}[1]{
+  \lfoot{\small{Week \arabic{week} -- #1}}
+  \rfoot{\tiny{compiled \today}}
+  \lhead{}
+  \rhead{}
+  \pagestyle{fancy}
+}
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+\newcounter{example}
+\newcommand{\example}[1]{
+    \setcounter{qcounter}{1}
+    \refstepcounter{example} \subsection*{Example #1}
+}
+
+\newcounter{lqcounter}
+\newenvironment{labquestions}              % environment name
+{
+  \colorlet{shadecolor}{yellow!10}
+    \begin{shaded}
+    {\bf Questions:}
+    \begin{enumerate}
+    \setcounter{enumi}{\value{qcounter}}
+}                 % begin code
+{
+    \setcounter{qcounter}{\value{enumi}}
+    \end{enumerate}
+    \end{shaded}
+    
+}                     % end code
+
+
+% BEGIN COMMANDS FROM LATEX FOR PHYSICISTS
+% http://www.dfcd.net/articles/latex/latex.html
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right|
+ \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+% END COMMANDS FROM
